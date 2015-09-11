@@ -1,55 +1,59 @@
 在lisp中输入以下东西学习或者回顾知识
+
 \>表示输入的代码
-#表示注释，不需要输入
+
+\#表示注释，不需要输入
+
 ```
-\> 1
+> 1
 
-\> (+ 2 3)
+> (+ 2 3)
 
-\> (+ 2 3 4)
+> (+ 2 3 4)
 
-\> (/ (- 7 1) (- 4 2))
+> (/ (- 7 1) (- 4 2))
 
-\> 2 (+ 2 3) (+ 2 3 4) (/ (- 7 1) (- 4 2))
+> 2 (+ 2 3) (+ 2 3 4) (/ (- 7 1) (- 4 2))
 
-\> (quote (+ 3 5))
+> (quote (+ 3 5))
 
-\> '(+ 3 5)
+> '(+ 3 5)
 
-\> 'Liuchen	#结果发现变成了大写了。
+> 'Liuchen	#结果发现变成了大写了。
 
-\> '(my 3 "Sons")	#发现引号保护了sons而没有变成大写
+> '(my 3 "Sons")	#发现引号保护了sons而没有变成大写
 
-\> '(the list (a b c) has 3 elements)
+> '(the list (a b c) has 3 elements)
 
-\> (list 'my (+ 2 1) "Sons")
+> (list 'my (+ 2 1) "Sons")
 
-\> (list '(+ 2 1) (+ 2 1))
+> (list '(+ 2 1) (+ 2 1))
 
-\> ()
+> ()
 
-\> nil	#这个和上个都是表示空列表，可以在需要的时候使用
+> nil	#这个和上个都是表示空列表，可以在需要的时候使用
 
-\> (cons 'a '(b c d))	#注意后一个参数是'()才可以组合，否则生成其他，可以自己尝试
+> (cons 'a '(b c d))	#注意后一个参数是'()才可以组合，否则生成其他，可以自己尝试
 
-\> (car '(a b c))
+> (car '(a b c))
 
-\> (cdr '(a b c))
+> (cdr '(a b c))
 
-\> (listp '(a b c))
+> (listp '(a b c))
 
-\> (listp 'a)
+> (listp 'a)
 
-\> (if (listp '(a b c))
+> (if (listp '(a b c))
       (+ 1 2)
       (+ 5 6))
 
-\> (if (listp 27)
+> (if (listp 27)
       (+ 1 2)
       (+ 5 6))
 
-\> (defun our-third (x)
+> (defun our-third (x)
    (car (cdr (cdr x))))
    
 ```
+
 阅读到http://acl.readthedocs.org/en/latest/zhCN/ch2-cn.html#form的2.7递归章节
