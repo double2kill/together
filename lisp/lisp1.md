@@ -1,7 +1,7 @@
 在lisp中输入以下东西学习或者回顾知识
 >表示输入的代码
 #表示注释，不需要输入
-
+```
 > 1
 
 > (+ 2 3)
@@ -51,4 +51,5 @@
 > (defun our-third (x)
    (car (cdr (cdr x))))
    
+```
 阅读到http://acl.readthedocs.org/en/latest/zhCN/ch2-cn.html#form的2.7递归章节
