@@ -54,6 +54,33 @@
 > (defun our-third (x)
    (car (cdr (cdr x))))
    
+\#2015年9月7号添加
+
+> (defun our-member (obj lst)
+   (if (null lst)
+       nil
+   (if (eql (car lst) obj)
+       lst
+       (our-member obj (cdr lst)))))	#哇，能用看懂这样一个lisp语言的递归，已经很棒了。
+	   
+> (our-member 'b '(a b c))	#测试our-member函数
+
+> (our-member 'z '(a b c))	#测试our-member函数
+
+> (format t "~A plus ~A equals ~A. ~%" 2 3 (+ 2 3))
+
+> (let ((x 1) (y 2))
+     (+ x y))	#let只是临时给x和y赋初始值。相当于初始化，注意括号的个数。
+	 
+> (defparameter *glob* 99)	#定义全局变量。全局变量人为习惯给它们特殊命名形式。比如说这里就是 *名字* 形式
+
+> (boundp '*glob*)	查看变量是否为全局变量
+
+> (let ((n 10))	#注意n 10的括号数量，结合上个let例子理解为啥要这样操作
+   (setf n 2)	#setf是赋值。
+   n)
+
 ```
 
-阅读到http://acl.readthedocs.org/en/latest/zhCN/ch2-cn.html#form的2.7递归章节
+阅读到http://acl.readthedocs.org/en/latest/zhCN/ch2-cn.html#form的2.11赋值
+
