@@ -80,6 +80,24 @@
    (setf n 2)	#setf是赋值。
    n)
 
+\2015年7月14号添加
+> (setf lst '(c a r a t))
+
+> (remove 'a lst)
+
+> lst
+
+(setf x (remove 'a x))
+
+> lst
+
+>	(defun show-squares (start end)
+	  (do ((i start (+ i 1)))
+		  ((> i end) 'done)
+		(format t "~A ~A~%" i (* i i))))
+	
+> (show-squares 2 5)
+
 ```
 
 阅读到http://acl.readthedocs.org/en/latest/zhCN/ch2-cn.html#form的2.11赋值
