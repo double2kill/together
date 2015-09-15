@@ -98,7 +98,22 @@
 	
 > (show-squares 2 5)
 
+/2015年7月15号添加
+> (apply #'+ '(1 2 3))
+
+> (+ 1 2 3)
+
+> (apply #'+ 1 2 '(3 4 5))
+
+> (apply #'+ 1 2 )	#发现这个有误，利用这个只需要满足最后一个参数是'(),即列表形式
+
+> (funcall #'+ 1 2 3)
+
+> ((lambda (x) (+ x 100)) 1)	#lambda是临时函数，这个分成两段来看就看懂了，(lambda (x) (+ x 100))和1。显然1->x,然后输出x+100
+
+> (typep 27 'integer)
+
 ```
 
-阅读到http://acl.readthedocs.org/en/latest/zhCN/ch2-cn.html#form的2.11赋值
-
+阅读到http://acl.readthedocs.org/en/latest/zhCN/ch2-cn.html#form的习题部分，下回做一下习题2的解答
+原本已经觉得学完了，但是居然发现其实山外有山，这个只是一本书里面的一章，具体目录网址为：http://acl.readthedocs.org/en/latest/zhCN/index.html
