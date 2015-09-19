@@ -80,7 +80,7 @@
    (setf n 2)	#setf是赋值。
    n)
 
-\2015年7月14号添加
+\2015年9月14号添加
 > (setf lst '(c a r a t))
 
 > (remove 'a lst)
@@ -98,7 +98,7 @@
 	
 > (show-squares 2 5)
 
-/2015年7月15号添加
+/2015年9月15号添加
 > (apply #'+ '(1 2 3))
 
 > (+ 1 2 3)
@@ -113,7 +113,62 @@
 
 > (typep 27 'integer)
 
+/2015年9月19号添加
+
+> (setf z (list 'a (list 'b 'c) 'd))
+
+> (car (cdr z))
+
+> (eql (cons 'a nil) (cons 'a nil))	#居然输出nil
+
+> (setf x (cons 'a nil))
+
+> (eql x x)
+
+> (equal x (cons 'a nil))	#注意这个是equal所以才相等。
+
+(defun compress (x)	#压缩代码。
+  (if (consp x)
+      (compr (car x) 1 (cdr x))
+      x))
+
+(defun compr (elt n lst)
+  (if (null lst)
+      (list (n-elts elt n))
+      (let ((next (car lst)))
+        (if (eql next elt)
+            (compr elt (+ n 1) (cdr lst))
+            (cons (n-elts elt n)
+                  (compr next 1 (cdr lst)))))))
+
+(defun n-elts (elt n)
+  (if (> n 1)
+      (list n elt)
+      elt))
+	 
+效果：
+> (compress '(1 1 1 0 1 0 0 0 0 1))	#能读懂上面的代码就差不多已经入门lisp了。
+((3 1) 0 1 (4 0) 1)
+
+> (uncompress '((3 1) 0 1 (4 0) 1))	#有了压缩，一定很想写一个解压的方法
+(1 1 1 0 1 0 0 0 0 1)
+
+(defun uncompress (lst)
+  (if (null lst)
+      nil
+      (let ((elt (car lst))
+            (rest (uncompress (cdr lst))))
+        (if (consp elt)
+            (append (apply #'list-of elt)
+                    rest)
+            (cons elt rest)))))
+
+(defun list-of (n elt)
+  (if (zerop n)
+      nil
+      (cons elt (list-of (- n 1) elt))))
+	  
 ```
 
-阅读到http://acl.readthedocs.org/en/latest/zhCN/ch2-cn.html#form的习题部分，下回做一下习题2的解答
+阅读到http://acl.readthedocs.org/en/latest/zhCN/ch3-cn.html的3.6存取，下回还是可以做一下习题2的解答
 原本已经觉得学完了，但是居然发现其实山外有山，这个只是一本书里面的一章，具体目录网址为：http://acl.readthedocs.org/en/latest/zhCN/index.html
