@@ -196,5 +196,7 @@
 
 ```
 
-阅读到http://acl.readthedocs.org/en/latest/zhCN/ch3-cn.html的3.6存取，下回还是可以做一下习题2的解答
+阅读到http://acl.readthedocs.org/en/latest/zhCN/ch3-cn.html
+的3.13点状列表，下回还是可以做一下习题2的解答
+
 原本已经觉得学完了，但是居然发现其实山外有山，这个只是一本书里面的一章，具体目录网址为：http://acl.readthedocs.org/en/latest/zhCN/index.html
