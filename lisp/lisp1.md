@@ -168,6 +168,32 @@
       nil
       (cons elt (list-of (- n 1) elt))))
 	  
+/2015年9月22号添加
+> (nth 0 '(a b c))
+
+> (nthcdr 2 '(a b c))
+
+> (mapcar #'(lambda (x) (+ x 10))
+          '(1 2 3))
+		  
+> (mapcar #'list
+          '(a b c)
+          '(1 2 3 4))
+
+> (member 'b '(a b c))
+
+> (member '(a) '((a) (z)) :test #'equal)
+
+> (member 'a '((a b) (c d)) :key #'car)
+
+> (member 2 '((1) (2)) :key #'car :test #'equal)
+
+> (member 2 '((1) (2)) :test #'equal :key #'car)	两者都询问是否有一个元素的 car 等于( equal ) 2。
+
+> (adjoin 'b '(a b c))
+
+> (adjoin 'z '(a b c))	  
+
 ```
 
 阅读到http://acl.readthedocs.org/en/latest/zhCN/ch3-cn.html的3.6存取，下回还是可以做一下习题2的解答
